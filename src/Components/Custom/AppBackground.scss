@@ -1,0 +1,13 @@
+$primary-color: #ecf9ff;
+
+.container {
+  background-color: $primary-color;
+  position: fixed;
+  height: 100vh;
+}
+
+.childContainer {
+  position: relative;
+  justify-content: center;
+  display: flex;
+}

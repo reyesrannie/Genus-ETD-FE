@@ -1,0 +1,43 @@
+$primary-color: #a084dc;
+$secondary-color: #ffffff;
+$shadowColor: #c5c5c5;
+
+.drawer {
+  background-color: $primary-color;
+}
+
+.tableList {
+  overflow: hidden;
+  border-radius: 2vh;
+  flex-grow: 1;
+  height: 87vh;
+  background-color: $secondary-color;
+  box-shadow: 0px 0px $shadowColor;
+}
+
+.appBarPadding {
+  flex-grow: 1;
+  padding: 2vh;
+}
+
+.listItem {
+  display: block;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15vh;
+  margin-top: 3vh;
+}
+
+.hiddenBox {
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appBar {
+  box-shadow: 1px 1px $shadowColor;
+}
