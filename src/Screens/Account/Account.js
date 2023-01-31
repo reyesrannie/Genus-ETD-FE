@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -22,8 +22,12 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import TableFooter from "@mui/material/TableFooter";
 import TablePagination from "@mui/material/TablePagination";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { Dialog } from "@mui/material";
 import { UsersList } from "../../Services/AccountUsers";
 import "./Account.scss";
+import AccountRegister from "./AccountRegister";
+import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
+import AppButton from "../../Components/Custom/Forms/AppButton";
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -112,21 +116,30 @@ export default function Account() {
     setPage(0);
   };
 
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar variant="regular">
-          <Typography
-            variant="h6"
-            color="inherit"
-            component="div"
-            sx={{ mx: 2 }}
-          >
+          <Typography variant="h6" color="inherit" component="div">
             User Accounts
           </Typography>
-          <Button variant="contained" startIcon={<AddIcon />} color="success">
-            New
-          </Button>
+          <Box sx={{ flexGrow: 1 }} />
+          <AppButton
+            color="primary"
+            variant="contained"
+            startIcon={<LibraryAddIcon />}
+            onClick={handleOpen}
+            name="ADD"
+          />
         </Toolbar>
       </AppBar>
 
@@ -197,6 +210,9 @@ export default function Account() {
           </TableFooter>
         </Table>
       </TableContainer>
+      <Dialog open={open} onClose={handleClose} maxWidth={false}>
+        <AccountRegister />
+      </Dialog>
     </Box>
   );
 }

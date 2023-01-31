@@ -1,12 +1,18 @@
 .items {
   display: flex;
   align-items: flex-start;
-  border: 2px solid saddlebrown;
+  color: antiquewhite;
   border-radius: 4vh;
   background-image: url("../../Assets/forLogo.jpg");
-  overflow: hidden;
-  height: 40vh;
+
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 10ch;
+}
+
+.form {
+  background-color: #f7f5eb;
+}
+
+.text {
+  color: darkslategrey;
 }

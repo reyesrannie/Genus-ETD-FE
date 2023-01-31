@@ -8,17 +8,15 @@ const style = () => {
   };
 
   const form = {
-    boxShadow: 20,
-    backgroundColor: "#fdeae9",
     borderRadius: 5,
-    height: "40vh",
+    height: "45vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
     flexDirection: "column",
-    pl: 3,
-    pr: 3,
+    pl: 1,
+    pr: 1,
   };
 
   const logo = {
@@ -26,8 +24,8 @@ const style = () => {
       xs: "", //  0px
       sm: "", //600px
       md: "", // 900px
-      lg: "23vh", // 1200px
-      xl: "23vh", //1536
+      lg: "25vh", // 1200px
+      xl: "40vh", //1536
     },
     height: {
       xs: "", //  0px
@@ -61,20 +59,19 @@ const style = () => {
   const items = {
     display: "flex",
     alignItems: "flex-start",
-    boxShadow: 20,
+    boxShadow: 5,
     borderRadius: 5,
     overflow: "hidden",
-    backgroundImage: `url(${forLogo})`,
-    backgroundRepeat: "no-repeat",
+
     backgroundSize: "fill",
     width: {
       xs: "40vh", //  0px
       sm: "40vh", //600px
       md: "55vh", // 900px
       lg: "70vh", // 1200px
-      xl: "70vh", //1536
+      xl: "90vh", //1536
     },
-    height: "40vh",
+    height: "45vh",
     my: "30vh",
   };
 

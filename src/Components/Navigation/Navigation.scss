@@ -1,9 +1,10 @@
-$primary-color: #a084dc;
+$primary-color: #301e67;
 $secondary-color: #ffffff;
 $shadowColor: #c5c5c5;
 
 .drawer {
   background-color: $primary-color;
+  height: 100%;
 }
 
 .tableList {
@@ -13,6 +14,7 @@ $shadowColor: #c5c5c5;
   height: 87vh;
   background-color: $secondary-color;
   box-shadow: 0px 0px $shadowColor;
+  margin-top: 2vh;
 }
 
 .appBarPadding {
@@ -28,8 +30,8 @@ $shadowColor: #c5c5c5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 15vh;
-  margin-top: 3vh;
+  width: 20vh;
+  margin: 2vh;
 }
 
 .hiddenBox {
@@ -40,4 +42,16 @@ $shadowColor: #c5c5c5;
 
 .appBar {
   box-shadow: 1px 1px $shadowColor;
+}
+
+.text {
+  color: $secondary-color;
+}
+
+.icons {
+  flex-grow: 1;
+}
+
+.buttonContainer {
+  background-color: #301e67;
 }

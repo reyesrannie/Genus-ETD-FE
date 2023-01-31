@@ -23,7 +23,8 @@ import LabelIcon from "@mui/icons-material/Label";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ApprovalIcon from "@mui/icons-material/Approval";
 
-import logo from "../../Assets/logo1.png";
+import logo from "../../Assets/logo3.png";
+import logo1 from "../../Assets/logo2.png";
 import ListIconButton from "./ListIconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -144,17 +145,20 @@ export default function MiniDrawer({ children }) {
               )}
             </IconButton>
           ) : (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              sx={{
-                marginRight: 5,
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{
+                  marginRight: 1,
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <img className="image" src={logo1} alt="logo" />
+            </>
           )}
           <Box sx={{ flexGrow: 1 }} />
           <Typography variant="h6" sx={{ mx: 2 }}>
@@ -194,64 +198,61 @@ export default function MiniDrawer({ children }) {
       </AppBar>
 
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
-          <Box
-            className="hiddenBox"
-            sx={{
-              display: open ? "flex" : "hidden",
-              my: open ? 2 : 8,
-            }}
-          >
-            <Toolbar>
-              {open && <img className="image" src={logo} alt="logo" />}
-            </Toolbar>
-            {open && (
-              <Typography variant="h8" noWrap component="div">
-                GENUS ETD
-              </Typography>
-            )}
-          </Box>
-        </DrawerHeader>
-        {open && <Divider />}
-        <List>
-          <ListItem
-            disablePadding
-            className="listItem"
-            sx={{
-              display: "block",
-            }}
-          >
-            <ListIconButton
-              open={open}
-              itemName={"Account"}
-              icon={<ManageAccountsIcon />}
-              on
-            />
-            <ListIconButton
-              open={open}
-              itemName={"Material"}
-              icon={<BallotIcon />}
-            />
-            <ListIconButton
-              open={open}
-              itemName={"Category"}
-              icon={<LabelIcon />}
-            />
-            <ListIconButton
-              open={open}
-              itemName={"Ordering"}
-              icon={<AddShoppingCartIcon />}
-            />
-            <ListIconButton
-              open={open}
-              itemName={"Approving"}
-              icon={<ApprovalIcon />}
-            />
-          </ListItem>
-        </List>
+        <Box className="drawer">
+          <DrawerHeader>
+            <Box
+              className="hiddenBox"
+              sx={{
+                display: open ? "flex" : "hidden",
+                my: open ? 2 : 8,
+              }}
+            >
+              <Toolbar>
+                {open && <img className="image" src={logo} alt="logo" />}
+              </Toolbar>
+            </Box>
+          </DrawerHeader>
+          {open && <Divider sx={{ backgroundColor: "#FFFFFF" }} />}
+          <List>
+            <ListItem
+              disablePadding
+              className="listItem"
+              sx={{
+                display: "block",
+              }}
+            >
+              <ListIconButton
+                open={open}
+                itemName={"Account"}
+                icon={<ManageAccountsIcon />}
+                on
+              />
+              <ListIconButton
+                open={open}
+                itemName={"Material"}
+                icon={<BallotIcon />}
+              />
+              <ListIconButton
+                open={open}
+                itemName={"Category"}
+                icon={<LabelIcon />}
+              />
+              <ListIconButton
+                open={open}
+                itemName={"Ordering"}
+                icon={<AddShoppingCartIcon />}
+              />
+              <ListIconButton
+                open={open}
+                itemName={"Approving"}
+                icon={<ApprovalIcon />}
+              />
+            </ListItem>
+          </List>
+        </Box>
       </Drawer>
 
-      <Box component="main" className="appBarPadding">
+      <Box component="main">
         <DrawerHeader />
         <Box className="tableList">{children}</Box>
       </Box>

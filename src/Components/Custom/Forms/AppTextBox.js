@@ -35,7 +35,7 @@ function AppTextBox({
               label={label}
               helperText={helperText}
               InputProps={{
-                startAdornment: (
+                startAdornment: icon && (
                   <InputAdornment position="start">{icon}</InputAdornment>
                 ),
               }}

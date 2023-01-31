@@ -1,7 +1,7 @@
 const style = () => {
   const textContainer = {
-    width: "100%",
-    my: "2%",
+    width: "80%",
+    my: "3%",
   };
   const text = {
     color: "error",
@@ -9,8 +9,8 @@ const style = () => {
   };
 
   const buttonContainer = {
-    width: "100%",
-    marginTop: "2%",
+    width: "80%",
+    mt: 2,
   };
 
   const button = {

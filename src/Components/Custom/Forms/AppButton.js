@@ -1,19 +1,30 @@
 import style from "./style";
 import { Button, Box } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/system";
 
-function AppButton({ name, variant, onClick, color }) {
+function AppButton({ name, variant, onClick, color, sx, startIcon }) {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#301e67",
+      },
+    },
+  });
+
   return (
-    <Box sx={style().buttonContainer}>
+    <ThemeProvider theme={theme}>
       <Button
         type="submit"
         color={color}
         variant={variant}
-        sx={style().button}
+        sx={sx}
         onClick={onClick}
+        startIcon={startIcon}
       >
         {name}
       </Button>
-    </Box>
+    </ThemeProvider>
   );
 }
 

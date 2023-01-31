@@ -54,13 +54,19 @@ function LoginScreen() {
   return (
     <AppBackground>
       <form onSubmit={handleSubmit(submitHandler)}>
-        <Container sx={style().items} maxWidth="false" disableGutters={true}>
+        <Container
+          sx={style().items}
+          className="items"
+          maxWidth="false"
+          disableGutters={true}
+        >
           <Box sx={style().logo}>
             <img src={logo} style={style().logo1} alt="logo" />
-            GENUS ETD
+            <Typography>GENUS ETD</Typography>
           </Box>
-          <Box sx={style().form}>
-            <Box sx={style().textContainer1}>USER LOGIN</Box>
+          <Box sx={style().form} className="form">
+            <Typography className="text">USER LOGIN</Typography>
+
             <AppTextBox
               control={control}
               name="username"
@@ -92,7 +98,9 @@ function LoginScreen() {
               name="Sign In"
               variant="outlined"
             ></AppButton>
-            <Box sx={style().textContainer}>POWERED BY MIS</Box>
+            <Box sx={style().textContainer}>
+              <Typography className="text">POWERED BY MIS</Typography>
+            </Box>
           </Box>
         </Container>
       </form>

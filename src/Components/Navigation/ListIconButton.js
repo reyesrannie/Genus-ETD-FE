@@ -2,7 +2,7 @@ import React from "react";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import ListItem from "@mui/material/ListItem";
+import "./Navigation.scss";
 
 export default function ListIconButton({ open, icon, itemName, onClick }) {
   return (
@@ -15,15 +15,20 @@ export default function ListIconButton({ open, icon, itemName, onClick }) {
       onClick={onClick}
     >
       <ListItemIcon
+        className="icons"
         sx={{
           minWidth: 0,
           mr: open ? 3 : "auto",
           justifyContent: "center",
+          color: "#ffffff",
         }}
       >
         {icon}
       </ListItemIcon>
-      <ListItemText primary={itemName} sx={{ opacity: open ? 1 : 0 }} />
+      <ListItemText
+        primary={itemName}
+        sx={{ opacity: open ? 1 : 0, color: " #ffffff" }}
+      />
     </ListItemButton>
   );
 }
